@@ -306,21 +306,21 @@ def get_celeb_files(dst='img_align_celeba', max_images=100):
         os.mkdir(dst)
 
     # Now perform the following 100 times:
-    for img_i in range(1, max_images + 1):
-
-        # create a string using the current loop counter
-        f = '000%03d.jpg' % img_i
-
-        if not os.path.exists(os.path.join(dst, f)):
-
-            # and get the url with that string appended the end
-            url = 'https://s3.amazonaws.com/cadl/celeb-align/' + f
-
-            # We'll print this out to the console so we can see how far we've gone
-            print(url, end='\r')
-
-            # And now download the url to a location inside our new directory
-            urllib.request.urlretrieve(url, os.path.join(dst, f))
+#    for img_i in range(1, max_images + 1):
+#
+#        # create a string using the current loop counter
+#        f = '000%03d.jpg' % img_i
+#
+#        if not os.path.exists(os.path.join(dst, f)):
+#
+#            # and get the url with that string appended the end
+#            url = 'https://s3.amazonaws.com/cadl/celeb-align/' + f
+#
+#            # We'll print this out to the console so we can see how far we've gone
+#            print(url, end='\r')
+#
+#            # And now download the url to a location inside our new directory
+#            urllib.request.urlretrieve(url, os.path.join(dst, f))
 
     files = [os.path.join(dst, file_i)
              for file_i in os.listdir(dst)
